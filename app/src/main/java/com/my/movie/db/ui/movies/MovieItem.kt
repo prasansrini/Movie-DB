@@ -30,11 +30,14 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.my.movie.db.R
+import com.my.movie.db.data.model.Movie
 import com.my.movie.db.ui.theme.AppTheme
 import com.my.movie.db.ui.theme.spacing
 
 @Composable
-fun MovieItem() {
+fun MovieItem(
+	item: Movie
+) {
 	val spacing = MaterialTheme.spacing
 	Box(
 		modifier = Modifier
@@ -70,7 +73,7 @@ fun MovieItem() {
 			AsyncImage(
 				model = ImageRequest
 					.Builder(LocalContext.current)
-					.data(R.drawable.bg_jurassic_world)
+					.data(item.fullPosterPath)
 					.crossfade(true)
 					.build(),
 				placeholder = painterResource(R.drawable.bg_image_placeholder),
@@ -85,7 +88,7 @@ fun MovieItem() {
 					.padding(start = spacing.medium)
 			) {
 				Text(
-					text = "Jurassic World Dominion",
+					text = item.title,
 					style = MaterialTheme.typography.titleLarge,
 					color = MaterialTheme.colorScheme.onSurface
 				)
@@ -93,7 +96,7 @@ fun MovieItem() {
 				Spacer(modifier = Modifier.size(spacing.medium))
 
 				Text(
-					text = "Four years after Isla Nublar was destroyed, dinosaurs now live—and hunt—alongside humans all over the world. This fragile balance will reshape the future and determine, once and for all, whether human beings are to remain the apex predators on a planet they now share with history’s most fearsome creatures.",
+					text = item.overview,
 					style = MaterialTheme.typography.bodyMedium,
 					color = MaterialTheme.colorScheme.onSurface,
 					maxLines = 7,
@@ -103,7 +106,7 @@ fun MovieItem() {
 				Spacer(modifier = Modifier.size(spacing.medium))
 
 				Text(
-					text = "IMDB 8.9",
+					text = "IMDB ${item.voteAverage}",
 					style = MaterialTheme.typography.bodySmall,
 					fontWeight = FontWeight.Bold,
 					modifier = Modifier
@@ -128,7 +131,7 @@ fun MovieItem() {
 @Composable
 fun MovieItemPreviewDark() {
 	AppTheme {
-		MovieItem()
+//		MovieItem()
 	}
 }
 
@@ -139,6 +142,6 @@ fun MovieItemPreviewDark() {
 @Composable
 fun MovieItemPreviewLight() {
 	AppTheme {
-		MovieItem()
+//		MovieItem()
 	}
 }

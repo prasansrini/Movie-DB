@@ -6,16 +6,18 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import com.my.movie.db.data.model.Movie
 
 @Composable
-fun MovieList() {
+fun MovieList(
+	movies: List<Movie>
+) {
 	Surface(
-		modifier = Modifier
-			.fillMaxSize()
+		modifier = Modifier.fillMaxSize()
 	) {
 		LazyColumn {
-			items((1..10).toList()) {
-				MovieItem()
+			items(movies) { item ->
+				MovieItem(item)
 			}
 		}
 	}
