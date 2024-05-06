@@ -1,6 +1,5 @@
 package com.my.movie.db.data.model
 
-
 import com.my.movie.db.data.network.IMAGE_URL_PREFIX
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

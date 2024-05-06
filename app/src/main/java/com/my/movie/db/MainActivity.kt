@@ -8,9 +8,9 @@ import androidx.activity.viewModels
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.platform.LocalContext
 import com.my.movie.db.data.Resource
+import com.my.movie.db.ui.movies.MovieList
 import com.my.movie.db.ui.theme.AppTheme
 import dagger.hilt.android.AndroidEntryPoint
-import com.my.movie.db.ui.movies.MovieList
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {

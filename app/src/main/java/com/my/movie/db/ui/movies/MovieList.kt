@@ -7,7 +7,6 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.my.movie.db.data.model.Movie
-import com.my.movie.db.ui.movies.MovieItem
 
 @Composable
 fun MovieList(
