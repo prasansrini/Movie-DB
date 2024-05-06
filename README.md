@@ -9,7 +9,7 @@ A movie DB application to list all the popular movies using TMDB APIs.
 - Ktor client APIs
 - Hilt
 - Jetpack Compose UI
-- IntelliJ IDEA
+- Andropid Studio JellyFish
 
 ### Contributors
 Prasanna Srinivasan
