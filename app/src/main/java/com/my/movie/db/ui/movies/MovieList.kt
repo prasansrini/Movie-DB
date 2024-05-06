@@ -16,7 +16,12 @@ fun MovieList(
 		modifier = Modifier.fillMaxSize()
 	) {
 		LazyColumn {
-			items(movies) { item ->
+			items(
+				items = movies,
+				key = {
+					it.id
+				}
+			) { item ->
 				MovieItem(item)
 			}
 		}
