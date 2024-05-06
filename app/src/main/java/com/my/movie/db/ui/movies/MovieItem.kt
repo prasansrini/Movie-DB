@@ -36,7 +36,7 @@ import com.my.movie.db.ui.theme.spacing
 
 @Composable
 fun MovieItem(
-	item: Movie
+	item: Movie?
 ) {
 	val spacing = MaterialTheme.spacing
 	Box(
@@ -73,7 +73,7 @@ fun MovieItem(
 			AsyncImage(
 				model = ImageRequest
 					.Builder(LocalContext.current)
-					.data(item.fullPosterPath)
+					.data(item?.fullPosterPath ?: "Preview URL")
 					.crossfade(true)
 					.build(),
 				placeholder = painterResource(R.drawable.bg_image_placeholder),
@@ -88,7 +88,7 @@ fun MovieItem(
 					.padding(start = spacing.medium)
 			) {
 				Text(
-					text = item.title,
+					text = item?.title ?: "Preview Title",
 					style = MaterialTheme.typography.titleLarge,
 					color = MaterialTheme.colorScheme.onSurface
 				)
@@ -96,7 +96,7 @@ fun MovieItem(
 				Spacer(modifier = Modifier.size(spacing.medium))
 
 				Text(
-					text = item.overview,
+					text = item?.overview ?: "Preview Overview",
 					style = MaterialTheme.typography.bodyMedium,
 					color = MaterialTheme.colorScheme.onSurface,
 					maxLines = 7,
@@ -106,7 +106,7 @@ fun MovieItem(
 				Spacer(modifier = Modifier.size(spacing.medium))
 
 				Text(
-					text = "IMDB ${item.voteAverage}",
+					text = "IMDB ${item?.voteAverage ?: "Preview Rating"}",
 					style = MaterialTheme.typography.bodySmall,
 					fontWeight = FontWeight.Bold,
 					modifier = Modifier
@@ -131,7 +131,7 @@ fun MovieItem(
 @Composable
 fun MovieItemPreviewDark() {
 	AppTheme {
-//		MovieItem()
+		MovieItem(null)
 	}
 }
 
@@ -142,6 +142,6 @@ fun MovieItemPreviewDark() {
 @Composable
 fun MovieItemPreviewLight() {
 	AppTheme {
-//		MovieItem()
+		MovieItem(null)
 	}
 }
