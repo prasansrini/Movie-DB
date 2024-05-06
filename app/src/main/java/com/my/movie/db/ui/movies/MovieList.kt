@@ -1,4 +1,4 @@
-package net.simplifiedcoding.tmdbmovies.ui.movies
+package com.my.movie.db.ui.movies
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
@@ -7,6 +7,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.my.movie.db.data.model.Movie
+import com.my.movie.db.ui.movies.MovieItem
 
 @Composable
 fun MovieList(

@@ -1,4 +1,4 @@
-package net.simplifiedcoding.tmdbmovies.ui.movies
+package com.my.movie.db.ui.movies
 
 import android.content.res.Configuration
 import androidx.compose.foundation.background
